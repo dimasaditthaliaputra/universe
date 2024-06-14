@@ -146,9 +146,15 @@
   }
 
   function event() {
+    var audio = document.getElementById("myAudio");
+
     document.addEventListener(
       "click",
       function (e) {
+        if (audio.paused) {
+          audio.play();
+        }
+
         textIndex++;
         if (textIndex >= texts.length) {
           textIndex--;
